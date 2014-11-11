@@ -11,22 +11,44 @@ This is the codebase for the workshop "C++ from '90 to '14"
 
 ### How to build it ###
 
-Open a console and go where you downloaded the repo, create a directory called linux-build, win32-build or osx-build, go inside and type 
+Open a console and go where you downloaded the repo, create a directory called linux-build, win32-build or osx-build
+
+    $ mkdir linux-build
+
+go inside:
+
+    $ cd linux-build
+
+and type 
 
     $ cmake ..
 
-The cmake create a project compatible for you O.S. If you are on linux/osx now you can run
+The cmake create a project compatible for you O.S. 
+If you are on linux/osx now you can run
 
     $ make
 
-And you compile the program and the test. You can launch the program with
+If you are on windows with VS 2013 you can run
 
-    $ ./yahtzee
+    $ msbuild Yahtzee.sln
+
+After that you have compiled the program and the test.
+
+On linux you can launch the program with
+
+    $ ./Yahtzee
 
 or run the test with
 
     $ ./yahtzee_test
 
+If you are on windows you can run the program with:
+
+    $ Debug\Yahtzee.exe
+
+or run the test with
+
+    $ Debug\yahtzee_test.exe
 
 One test should be red.
 
