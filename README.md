@@ -5,9 +5,9 @@ This is the codebase for the workshop "C++ from '90 to '14"
 
 ### Prerequisites ###
 
-    * [CMake][1]
+    * [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe)
     * OSX - Linux: at least gcc 4.8
-    * Win32: [VS 2013][2] 
+    * Win32: [VS 2013](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop) 
 
 ### How to build it ###
 
@@ -30,7 +30,3 @@ or run the test with
 
 One test should be red.
 
-
-
-[1]: http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe "CMake 2.8"
-[2]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop "VS 2013 Express"
