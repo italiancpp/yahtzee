@@ -1,5 +1,5 @@
 #ifdef CHECK_LEAKS
-	//#include "..\utils\debug-new\DebugNew.h"
+// #include "../utils/debug-new/DebugNew.h"
 #endif
 #include "ScoreCalculator.h"
 #include <iostream>
