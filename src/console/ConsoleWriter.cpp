@@ -9,16 +9,6 @@
 
 using namespace std;
 
-// TODO -> C'è ancora nei nomi generala, andrebbe sistituito con yahtzee
-// TODO -> Se non premo h o s o r, ora è come se premessi r, avrebbe senso insistere e richiedere una scelta
-// TODO -> Se non ci sono più tiri disponibili si deve chiedere quale score scegliere, ora tira un eccezione
-// TODO -> Occorre stampare diversamente la tabella dello score per dare la posizione dello score
-// TODO -> Non è possibile 'resettare' i dati che si erano tenuti il giro prima
-// TODO -> Se assegni uno score già presente tira una eccezzione
-// TODO -> Non viene controllato che si inserisca il numero corretto del dado (si può dire di tenere il dato 12)
-// TODO -> Avrebbe senso stampare prima i dadi e poi il potential score, per fare questo ha senso fare un test
-
-
 void ConsoleWriter::startTurnFor(DicePlayer &player, size_t currentTurn)
 {
 	cout << "Inizia il turno (" << currentTurn << ") per il giocatore '" << player.Name() << "'" << endl;
