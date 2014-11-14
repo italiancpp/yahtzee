@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <sstream>
 #include <iterator>
+#include <cstdlib>
 #include "ConsoleWriter.h"
 #include "../Yahtzee/Yahtzee.h"
 #include "../Yahtzee/GameConfiguration.h"
@@ -214,7 +215,7 @@ void ConsoleWriter::selectDieToHold(Yahtzee &yahtzee)
 	std::vector<int> diceToHold;
 	for (auto& token : tokens)
 	{
-		auto h = stoul(token);
+		auto h = strtoul(token.c_str(), nullptr, 10);
 		if (h < 6)
 		{
 			diceToHold.push_back(h - 1);
