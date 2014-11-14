@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-set(APP_NAME Yahtzee)
+set(APP_NAME yahtzee)
 project (${APP_NAME})
 
 option(DEBUG_MODE "Debug or release?" ON)
@@ -27,6 +27,13 @@ elseif(CYGWIN)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
 
 elseif (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
+
+	set(CMAKE_C_FLAGS_DEBUG "-g -Wall")
+	set(CMAKE_CXX_FLAGS_DEBUG ${CMAKE_C_FLAGS_DEBUG})
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+else (CMAKE_COMPILER_IS_CLANG)
 
 	set(CMAKE_C_FLAGS_DEBUG "-g -Wall")
 	set(CMAKE_CXX_FLAGS_DEBUG ${CMAKE_C_FLAGS_DEBUG})
