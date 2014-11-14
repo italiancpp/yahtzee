@@ -47,6 +47,6 @@ public:
 	void endTurn(Scores::ScoreName score); // fine turno giocatore corrente
 	std::string getWinner();
 		// utils
-		size_t numberOfPlayers() const;
+	size_t numberOfPlayers() const;
 };
 
