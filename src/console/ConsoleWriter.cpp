@@ -9,6 +9,11 @@
 
 using namespace std;
 
+ConsoleWriter::ConsoleWriter()
+{
+	_endGame = false;
+}
+
 void ConsoleWriter::startTurnFor(DicePlayer &player, size_t currentTurn)
 {
 	cout << "Inizia il turno (" << currentTurn << ") per il giocatore '" << player.Name() << "'" << endl;
@@ -55,14 +60,20 @@ void ConsoleWriter::diceRolled(const std::vector<Die> &dice, size_t currentShot,
 
 void ConsoleWriter::endTurnFor(DicePlayer &player, const ScoreTable &currentScores, size_t justEndedTurn)
 {
+	cout << "--------------------------------------------" << endl;
 	cout << "Fine del turno per " << player.Name() << endl;
-	cout << "Punteggio " << currentScores << endl;
+	cout << "Punteggio " << currentScores;
 	cout << "Turni terminati " << justEndedTurn << endl;
+	cout << "--------------------------------------------" << endl << endl;
 }
 
 void ConsoleWriter::gameOver()
 {
-	cout << "GAME OVER!!!!!" << endl;
+	cout << endl;
+	cout << "+++++++++++++++++++++++++++++++++++" << endl;
+	cout << "+ GAME OVER!!!!!                  +" << endl;
+	cout << "+++++++++++++++++++++++++++++++++++" << endl;
+	_endGame = true;
 }
 
 void ConsoleWriter::run()
@@ -70,11 +81,11 @@ void ConsoleWriter::run()
 	auto playerNumber = getPlayerNumber();
 	auto players = createPlayers(playerNumber);
 
-	GameConfiguration yahtzeeConfig(5, 6, 13);
+	GameConfiguration yahtzeeConfig = CreateDefaultGameConfiguration();
 	Yahtzee yahtzee(players, yahtzeeConfig, *this);
 
 	yahtzee.newGame();
-	while(true)
+	while(!_endGame)
 	{
 		try
 		{
@@ -113,8 +124,17 @@ void ConsoleWriter::run()
 				done = false;
 			}
 		}
-		
 	}
+
+	cout << endl;
+	cout << "The winner is: " << yahtzee.getWinner() << endl << endl;
+	cout << "+++++++++++++++++++++++++++++++++++" << endl;
+	auto rank = yahtzee.getRank();
+	for_each(begin(rank), end(rank), [](const std::pair<const DicePlayer*, const ScoreTable*> &row){
+		cout << row.first->Name() << " - " << row.second->TotalScore() << endl;
+	});
+	cout << "+++++++++++++++++++++++++++++++++++" << endl;
+	cout << endl;
 }
 
 int ConsoleWriter::getPlayerNumber()

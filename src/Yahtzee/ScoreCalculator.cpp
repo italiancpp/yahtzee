@@ -2,7 +2,6 @@
 // #include "../utils/debug-new/DebugNew.h"
 #endif
 #include "ScoreCalculator.h"
-#include <iostream>
 
 using namespace std;
 
