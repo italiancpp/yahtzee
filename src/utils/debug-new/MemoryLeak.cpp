@@ -1,6 +1,6 @@
 #include "MemoryLeak.h"
 
-#include <malloc.h>
+#include <stdlib.h>
 
 // ----------------------------------------------------------------------------
 // MemoryLea
@@ -53,7 +53,7 @@ int MemoryLeak::_stop(bool auto_free)
     MemoryLeakInfo* info = &m_info[i];
     if (info->p != NULL)
     {
-      printf("memory leak %p(%u) %s:%d\n", info->p, info->size, info->file, info->line);
+      printf("memory leak %p(%u) %s:%d\n", info->p, (unsigned int)info->size, info->file, info->line);
       res++;
       if (auto_free)
       {

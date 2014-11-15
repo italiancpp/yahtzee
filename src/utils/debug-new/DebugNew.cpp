@@ -1,6 +1,6 @@
 #include "MemoryLeak.h"
 
-#include <malloc.h>
+#include <stdlib.h>
 
 extern MemoryLeak g_memoryLeak;
 
@@ -12,20 +12,20 @@ extern MemoryLeak g_memoryLeak;
 void* debug_malloc(size_t size, const char* file, const int line)
 {
   void* p = ::malloc(size);
-  debug_new_log("debug_malloc(%u, %s, %d) %p\n", size, file, line, p);
+  debug_new_log("debug_malloc(%u, %s, %d) %p\n", (unsigned int)size, file, line, p);
 
   MemoryLeakInfo* info = g_memoryLeak.find(p);
   if (info != NULL)
   {
     printf("already exist %p %s %d\n", p, file, line);
-    printf("existing info : %p(%u) %s:%d\n", info->p, info->size, info->file, info->line);
+    printf("existing info : %p(%u) %s:%d\n", info->p, (unsigned int)info->size, info->file, info->line);
     ::free(p);
     return NULL;
   }
   info = g_memoryLeak.add(p, size, (char*)file, (int)line);
   if (info == NULL)
   {
-    printf("can not add %p(%u) %s:%d\n", p, size, file, line);
+    printf("can not add %p(%u) %s:%d\n", p, (unsigned int)size, file, line);
     ::free(p);
     return NULL;
   }
@@ -46,7 +46,7 @@ void debug_free(void* p, const char* file, const int line)
 void* operator new (size_t size, const char* file, const int line)
 {
   void* p = debug_malloc(size, file, line);
-  debug_new_log("new(%u, %s, %d) %p\n", size, file, line, p);
+  debug_new_log("new(%u, %s, %d) %p\n", (unsigned int)size, file, line, p);
   return p;
 }
 
@@ -66,14 +66,14 @@ void operator delete (void* p)
 void* operator new[] (size_t size, const char* file, const int line)
 {
   void* p = debug_malloc(size, file, line);
-  debug_new_log("new[](%u, %s, %d) %p\n", size, file, line, p);
+  debug_new_log("new[](%u, %s, %d) %p\n", (unsigned int)size, file, line, p);
   return p;
 }
 
 void operator delete[] (void* p, const char* file, const int line)
 {
   debug_new_log("delete[](%p, %s, %d)\n", p, file, line);
-  delete[] p;
+  //delete[] p;
   return debug_free(p, file, line);
 }
 

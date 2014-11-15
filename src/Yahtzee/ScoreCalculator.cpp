@@ -1,7 +1,7 @@
+#include "ScoreCalculator.h"
 #ifdef CHECK_LEAKS
 // #include "../utils/debug-new/DebugNew.h"
 #endif
-#include "ScoreCalculator.h"
 
 using namespace std;
 

@@ -11,7 +11,7 @@
 #ifndef __MEMORY_LEAK_H__
 #define __MEMORY_LEAK_H__
 
-#include <malloc.h>
+#include <stdlib.h>
 #include <stdio.h> // for size_t
 
 // ----------------------------------------------------------------------------

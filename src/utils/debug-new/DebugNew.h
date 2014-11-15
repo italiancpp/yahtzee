@@ -11,7 +11,7 @@
 #ifndef __DEBUG_NEW_H__
 #define __DEBUG_NEW_H__
 
-#include <malloc.h>
+#include <stdlib.h>
 #include <stdio.h> // for size_t
 #include "MemoryLeak.h"
 
@@ -32,8 +32,8 @@ void  operator delete[] (void* p);
 // ----------------------------------------------------------------------------
 #define debug_new new(__FILE__, __LINE__)
 #define new       debug_new
-#define malloc(A) debug_malloc((A), __FILE__, __LINE__)
-#define free(A)   debug_free((A), __FILE__, __LINE__)
-//#define delete(A) operator delete((A), __FILE__, __LINE__) // deprecated /// gilgil temp 2011.09.14
+//#define malloc(A) debug_malloc((A), __FILE__, __LINE__)
+//#define free(A)   debug_free((A), __FILE__, __LINE__)
+#define delete(A) operator delete((A), __FILE__, __LINE__) // deprecated /// gilgil temp 2011.09.14
 
 #endif // __DEBUG_NEW_H__
