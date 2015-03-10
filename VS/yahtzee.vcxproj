@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{09CD189F-2A39-4D1E-A636-FD2F20064006}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>yahtzee</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\src\utils\debug-new;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\src\utils\debug-new;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Yahtzee\DicePlayer.cpp" />
+    <ClCompile Include="..\src\Yahtzee\DiceRoller.cpp" />
+    <ClCompile Include="..\src\Yahtzee\GameState.cpp" />
+    <ClCompile Include="..\src\Yahtzee\ScoreCalculator.cpp" />
+    <ClCompile Include="..\src\Yahtzee\ScoreTable.cpp" />
+    <ClCompile Include="..\src\Yahtzee\ScoreValues.cpp" />
+    <ClCompile Include="..\src\Yahtzee\GameConfiguration.cpp" />
+    <ClCompile Include="..\src\Yahtzee\Yahtzee.cpp" />
+    <ClCompile Include="..\src\Yahtzee\Die.cpp" />
+    <ClCompile Include="..\src\Yahtzee\PlayerConfiguration.cpp" />
+    <ClCompile Include="..\src\console\ConsoleWriter.cpp" />
+    <ClCompile Include="..\src\console\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\console\ConsoleWriter.h" />
+    <ClInclude Include="..\src\Yahtzee\DicePlayer.h" />
+    <ClInclude Include="..\src\Yahtzee\DiceRoller.h" />
+    <ClInclude Include="..\src\Yahtzee\Die.h" />
+    <ClInclude Include="..\src\Yahtzee\GameConfiguration.h" />
+    <ClInclude Include="..\src\Yahtzee\GameState.h" />
+    <ClInclude Include="..\src\Yahtzee\Generala.h" />
+    <ClInclude Include="..\src\Yahtzee\Histogram.h" />
+    <ClInclude Include="..\src\Yahtzee\PlayerConfiguration.h" />
+    <ClInclude Include="..\src\Yahtzee\Rule.h" />
+    <ClInclude Include="..\src\Yahtzee\ScoreCalculator.h" />
+    <ClInclude Include="..\src\Yahtzee\ScoreTable.h" />
+    <ClInclude Include="..\src\Yahtzee\ScoreValues.h" />
+    <ClInclude Include="..\src\Yahtzee\Yahtzee.h" />
+    <ClInclude Include="..\src\Yahtzee\YahtzeeWriter.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
