@@ -5,7 +5,7 @@ This is the codebase for the workshop "C++ from '90 to '14"
 
 ### For Visual Studio users ###
 
-If you use Visual Studio 2012 or 2013, you can find prebuilt solutions here: https://github.com/italiancpp/yahtzee/tree/master/VS.
+If you use Visual Studio 2013, just download the repo and use prebuilt solutions here: https://github.com/italiancpp/yahtzee/tree/master/VS.
 
 ### Prerequisites ###
 
