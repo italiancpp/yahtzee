@@ -5,15 +5,15 @@ This is the codebase for the workshop "C++ dal '90 a oggi"
 
 ### For Visual Studio users ###
 
-If you use Visual Studio 2013, just clone the repo and use the prebuilt solution here: https://github.com/italiancpp/yahtzee/tree/master/VS.
+If you use **Visual Studio 2013**, just clone the repo and build the solution here: https://github.com/italiancpp/yahtzee/tree/master/VS. Then run yahtzee_test.exe. **One test should be RED**.
 
-Build the solution and run yahtzee_test.exe. **One test should be red**.
+Done? Ok, keep calm and wait for CDays15! :)
 
 ### Prerequisites ###
 
 * [CMake] for every O.S.
 * OSX - Linux: at least gcc 4.8
-* Win32: [VS 2013]
+* Win32: [Suggested at least VS 2013]
 
 ### How to build it ###
 
