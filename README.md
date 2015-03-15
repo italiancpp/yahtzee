@@ -1,11 +1,13 @@
 Yahtzee
 =======
 
-This is the codebase for the workshop "C++ from '90 to '14"
+This is the codebase for the workshop "C++ dal '90 a oggi"
 
 ### For Visual Studio users ###
 
-If you use Visual Studio 2013, just download the repo and use prebuilt solutions here: https://github.com/italiancpp/yahtzee/tree/master/VS.
+If you use Visual Studio 2013, just download the repo and use the prebuilt solution here: https://github.com/italiancpp/yahtzee/tree/master/VS.
+
+Build the solution and run yahtzee_test.exe. **One test should be red**.
 
 ### Prerequisites ###
 
@@ -54,7 +56,7 @@ or run the test with
 
     $ Debug\yahtzee_test.exe
 
-One test should be red.
+**One test should be red.**
 
 [CMake]:http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe
 [VS 2013]:http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop
