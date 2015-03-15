@@ -5,7 +5,7 @@ This is the codebase for the workshop "C++ dal '90 a oggi"
 
 ### For Visual Studio users ###
 
-If you use Visual Studio 2013, just download the repo and use the prebuilt solution here: https://github.com/italiancpp/yahtzee/tree/master/VS.
+If you use Visual Studio 2013, just clone the repo and use the prebuilt solution here: https://github.com/italiancpp/yahtzee/tree/master/VS.
 
 Build the solution and run yahtzee_test.exe. **One test should be red**.
 
