@@ -5,7 +5,7 @@
 
 using namespace std;
 
-ScoreCalculator::ScoreCalculator( unsigned short _maxDiceValue ) 
+ScoreCalculator::ScoreCalculator(unsigned short _maxDiceValue)
 	: maxDiceValue(_maxDiceValue)
 {}
 
@@ -15,7 +15,7 @@ ScoreCalculator::~ScoreCalculator()
 unsigned short* CalculateRanks(const vector<Die>& dice, unsigned short maxDiceValue)
 {
 	unsigned short* ranks = new unsigned short[maxDiceValue]();
-	for (size_t i = 0u; i<dice.size(); ++i)
+	for (size_t i = 0u; i < dice.size(); ++i)
 	{
 		ranks[dice[i].value - 1] += 1;
 	}
@@ -24,10 +24,10 @@ unsigned short* CalculateRanks(const vector<Die>& dice, unsigned short maxDiceVa
 
 void CalculateHistogram(unsigned short* ranks, int size, Histogram& histogram)
 {
-	for (int i = 0; i<size; ++i)
+	for (int i = 0; i < size; ++i)
 	{
 		if (ranks[i]>0)
-			histogram[ranks[i]].push_front(i+1);
+			histogram[ranks[i]].push_front(i + 1);
 	}
 }
 
@@ -39,6 +39,20 @@ inline bool histogram_has(const Histogram& histogram, unsigned short val)
 inline unsigned short Score(unsigned short score, bool isFirstShot, unsigned short extraIfFirstRoll = 5)
 {
 	return isFirstShot ? score + extraIfFirstRoll : score;
+}
+
+bool IsStraight(const Histogram& histogram)
+{
+	static unsigned short straightFromOne [] = {1,2,3,4,5};
+	static unsigned short straightFromTwo [] = {2,3,4,5,6};
+
+	if (histogram.size() == 1 && histogram_has(histogram, 1))
+	{
+		auto dice = histogram.at(1);
+		dice.sort();
+		return equal(begin(dice), end(dice), straightFromOne) || equal(begin(dice), end(dice), straightFromTwo);
+	}
+	return false;
 }
 
 void ScoreCalculator::CheckScore(const std::vector<Die>& dice, bool isFirstShort, ScoreTable& currentTable) const
@@ -79,7 +93,7 @@ void ScoreCalculator::CheckScore(const std::vector<Die>& dice, bool isFirstShort
 		currentTable.AssignScoreIfNotAssigned(DieValueToScore(pokerValue), 4 * pokerValue);
 	}
 
-	if ((histogram.size() == 1) && histogram_has(histogram, 1))
+	if (IsStraight(histogram))
 	{
 		currentTable.AssignScoreIfNotAssigned(Scores::straight, Score(20, isFirstShort));
 	}
