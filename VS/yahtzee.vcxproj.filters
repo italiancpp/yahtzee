@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\console\ConsoleWriter.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\console\main.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\DicePlayer.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\DiceRoller.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\Die.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\GameConfiguration.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\GameState.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\PlayerConfiguration.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\ScoreCalculator.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\ScoreTable.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\ScoreValues.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Yahtzee\Yahtzee.cpp">
+      <Filter>yahtzee</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="yahtzee">
+      <UniqueIdentifier>{b87772c4-3c9b-42d8-85d2-d82be0c1ca07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console">
+      <UniqueIdentifier>{C37694D1-FC43-4527-B571-92EC9F1D2EF2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\console\ConsoleWriter.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\DicePlayer.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\DiceRoller.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\Die.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\GameConfiguration.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\GameState.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\Generala.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\Histogram.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\PlayerConfiguration.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\Rule.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\ScoreCalculator.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\ScoreTable.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\ScoreValues.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\Yahtzee.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Yahtzee\YahtzeeWriter.h">
+      <Filter>yahtzee</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
