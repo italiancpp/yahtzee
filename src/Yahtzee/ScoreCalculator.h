@@ -1,7 +1,8 @@
 #pragma once
 
 #include <vector>
-#include "Rule.h"
+#include "Histogram.h"
+#include "GameState.h"
 #include "Die.h"
 
 class ScoreCalculator
